@@ -1,11 +1,11 @@
 import React from 'react';
 
-function SignUpPage() {
+function HomePage() {
     return (
       <div className="HomePage">
-            Sign Up Page Works!
+            Home Page Works!
       </div>
     );
   }
   
-  export default SignUpPage;
+  export default HomePage;
