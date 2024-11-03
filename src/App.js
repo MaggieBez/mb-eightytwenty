@@ -10,6 +10,7 @@ function App() {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
+  //Submit Logout
   const logoutUser = async (e) => {
     e.preventDefault();
     await signOut(auth);

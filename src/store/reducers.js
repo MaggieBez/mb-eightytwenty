@@ -1,8 +1,10 @@
+// Initial States
 export const initialEmail = '';
 export const initialPassword = '';
 export const initialRegisteredUser = 'unregistered';
 export const initialSignedInUser = { email: "", uid: "", accessToken: ""};
-//Reducers
+
+// Reducers
 export const emailReducer = (userEmail = initialEmail, action) => {
     switch (action.type) {
         case 'setUserEmail':
@@ -39,7 +41,7 @@ export const signinUserReducer = (signedInUser = initialSignedInUser, action) =>
     }
 }
 
-//Actions
+// Actions
 export function setUserEmail(email) {
     return {
         type: 'setUserEmail',

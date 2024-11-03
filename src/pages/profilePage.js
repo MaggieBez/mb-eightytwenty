@@ -14,14 +14,7 @@ function ProfilePage() {
   const [currentPassword, setCurrentPassword] = useState("");
   const [currentConfirmPassword, setCurrentConfirmPassword] = useState("");
   
-  const isInvalidPassword = () => {
-    return currentPassword.length < 6;
-  }
-
-  const passwordsDoNotMatch = () => {
-      return currentPassword !== currentConfirmPassword;
-  }
-
+  // Submit Update User DisplayName
   const updateUserName = () => {
     if (currentUserName.length === 0) {
       return;
@@ -34,11 +27,18 @@ function ProfilePage() {
       toast.error(error);
     })
   }
+  // Password Validation
+  const isInvalidPassword = () => {
+    return currentPassword.length < 6;
+  }
 
+  const passwordsDoNotMatch = () => {
+      return currentPassword !== currentConfirmPassword;
+  }
   const isNewPasswordInvalid = () => {
     return  isInvalidPassword() || passwordsDoNotMatch()
   }
-
+  // Submit Update User Password
   const updateUserPassword = () => {
     if (currentPassword.length === 0 ) {
       return;
@@ -56,7 +56,6 @@ function ProfilePage() {
   if (user) {
     return (
       <div className="ProfilePage">
-        
             <Container>
               <h3>User Profile</h3>
               <Row className="section">

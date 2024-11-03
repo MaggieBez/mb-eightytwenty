@@ -8,7 +8,3 @@ export const store = configureStore({reducer: combineReducers({
     registeredUser: registerUserReducer,
     signedInUser: signinUserReducer
 })});
-
-store.subscribe(() => {
-    console.log('current state', store.getState());
-});

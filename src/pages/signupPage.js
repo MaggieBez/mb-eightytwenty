@@ -18,12 +18,13 @@ function SignUpPage(props) {
 
     const { dispatch } = props;
 
+    // Email Validation
     const validEmailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
     const isInvalidEmail = (email) => {
         return !email.match(validEmailRegex);
     }
-
+    // Password Validation
     const isInvalidPassword = (password) => {
         return password.length < 6;
     }
@@ -31,13 +32,13 @@ function SignUpPage(props) {
     const passwordsDoNotMatch = (password1, password2) => {
         return password1 !== password2;
     }
-
+    // Form Validation
     const isFormInvalid = () => {
         return isInvalidEmail(currentEmail) || 
             isInvalidPassword(currentPassword1) || 
             passwordsDoNotMatch(currentPassword1, currentPassword2)
     }
-    
+    // Dispatch Email to the store    
     const onEmailChangeHandler = (e) => {
         const userInput = e.target.value;
         
@@ -54,6 +55,7 @@ function SignUpPage(props) {
         dispatch(setUserEmail(userInput));
     }
 
+    // Dispatch Password to the store
     const onPassword1ChangeHandler = (e) => {
         const userInput = e.target.value;
         setPassword1(userInput);
@@ -77,6 +79,7 @@ function SignUpPage(props) {
         dispatch(setUserPassword(userInput));
     }
 
+    // Submit Registration 
     const submitHandler = async (event) => {
         event.preventDefault();
         const result = await registerFirebaseUser(store.getState().userEmail, store.getState().userPassword);

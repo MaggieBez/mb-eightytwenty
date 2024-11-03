@@ -18,21 +18,25 @@ function SigninPage(props) {
 
   const { dispatch } = props;
   const navigate = useNavigate();
+
+ // Email Validation
   const validEmailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
   const isInvalidEmail = (email) => {
     return !email.match(validEmailRegex);
   }
-
+ // Password Validation
   const isInvalidPassword = (password) => {
       return password.length < 6;
   }
 
+ // Form Validation
   const isFormInvalid = () => {
     return isInvalidEmail(currentEmail) || 
         isInvalidPassword(currentPassword)
   }
 
+ // Dispatch Email to Store
   const onEmailChangeHandler = (e) => {
     const userInput = e.target.value;
     
@@ -49,6 +53,7 @@ function SigninPage(props) {
     dispatch(setUserEmail(userInput));
   }
 
+ // Dispatch Password to Store
   const onPasswordChangeHandler = (e) => {
     const userInput = e.target.value;
     setPassword(userInput);
@@ -60,6 +65,7 @@ function SigninPage(props) {
     dispatch(setUserPassword(userInput));
   }
 
+ // Submit Signin
   const submitHandler = async (event) => {
     event.preventDefault();
     const result = await signinFirebaseUser(store.getState().userEmail, store.getState().userPassword);
@@ -67,7 +73,7 @@ function SigninPage(props) {
       dispatch(signinUser(result));
       navigate("/welcome");
     } else {
-      toast.error("Login Failed");
+      toast.error("Login Failed. Check Credentials.");
     }
   }
 
