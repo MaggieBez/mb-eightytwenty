@@ -5,6 +5,9 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  .Toastify__close-button {
+    display: none;
+  }
   .Header {
     background-color: $base-color;
     height: 90px;
@@ -73,11 +76,15 @@
     .section {
       margin: 3rem 0;
     }
+    input {
+      margin: 10px 0;
+    }
     Button {
       width: $general-button-width;
       background-color: $primary-color;
       border-color: $primary-color;
       color: $base-color;
+      margin-top: 15px;
     }
   }
 }

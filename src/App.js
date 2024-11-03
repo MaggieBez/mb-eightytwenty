@@ -13,7 +13,7 @@ function App() {
   const logoutUser = async (e) => {
     e.preventDefault();
     await signOut(auth);
-    navigate('/signin')
+    navigate("/signin")
   }
 
   if (loading) { 
@@ -23,8 +23,8 @@ function App() {
   if (user) {
     return (
       <div className="App">
-          <div className='Header'>
-            <div className='Logo'> 
+          <div className="Header">
+            <div className="Logo"> 
               <h3>{ user.email }</h3>  
             </div>  
             <div>
@@ -33,7 +33,7 @@ function App() {
                   </ul>
             </div>
           </div>
-          <div className='pageDisplay'>
+          <div className="pageDisplay">
             <Outlet />
           </div>
       </div>
@@ -42,10 +42,10 @@ function App() {
 
   return(
     <div className="App">
-      <div className='Header'>
-        <div className='Logo'><h3>User Trial App</h3></div>  
+      <div className="Header">
+        <div className="Logo"><h3>User Trial App</h3></div>  
       </div>
-      <div className='pageDisplay'>
+      <div className="pageDisplay">
         <Outlet />
       </div>
     </div>

@@ -86,7 +86,7 @@ function SignUpPage(props) {
     return (
       <div className="SignUpPage">
         <Container>
-            <Row className='section'>
+            <Row className="section">
                 <Col lg={{ span:4, offset:4 }}>
                     <h3>Register</h3>
                     <Card>
@@ -140,9 +140,9 @@ function SignUpPage(props) {
                     </Card>  
                 </Col>
             </Row>
-            <Row className='section'>
+            <Row className="section">
                 <Col lg={{ span:4, offset:4 }}>
-                    <Link to='/signin'>
+                    <Link to="/signin">
                             Already have an account? Sign In
                     </Link>
                 </Col>

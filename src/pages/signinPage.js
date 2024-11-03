@@ -9,11 +9,12 @@ import { signinUser, setUserEmail, setUserPassword } from '../store/reducers';
 import { store } from '../store/store';
 import { signinFirebaseUser } from '../firebase';
 import { Card } from 'react-bootstrap';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function SigninPage(props) {
   const [currentEmail, setEmail] = useState("");
   const [currentPassword, setPassword] = useState("");
-  const [loginError, setLoginError] = useState("");
 
   const { dispatch } = props;
   const navigate = useNavigate();
@@ -64,16 +65,16 @@ function SigninPage(props) {
     const result = await signinFirebaseUser(store.getState().userEmail, store.getState().userPassword);
     if (result.uid) {
       dispatch(signinUser(result));
-      navigate('/welcome');
+      navigate("/welcome");
     } else {
-      setLoginError(result);
+      toast.error("Login Failed");
     }
   }
 
   return (
     <div className="SigninPage">   
       <Container>
-          <Row className='section'>
+          <Row className="section">
               <Col lg={{ span:4, offset:4 }}>
                   <h3>Sign In</h3>
                   <Card>
@@ -110,14 +111,20 @@ function SigninPage(props) {
                               Sign In
                           </Button>
                         </Form>
-                        <div>{loginError}</div>
+                        <ToastContainer 
+                            position="top-right"
+                            autoClose={5000}
+                            hideProgressBar
+                            newestOnTop
+                            closeOnClick={false}
+                            theme="dark"/>
                     </Card.Body>
                   </Card>  
               </Col>
           </Row>
-          <Row className='section'>
+          <Row className="section">
               <Col lg={{ span:4, offset:4 }}>
-                  <Link to='/'>
+                  <Link to="/">
                           Don't have and account yet? Register.
                   </Link>
               </Col>

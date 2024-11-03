@@ -15,12 +15,12 @@ function WelcomePage() {
       return (
         <div className="WelcomePage">
           <Container>
-            <Row className='section'>
+            <Row className="section">
               <Col>
                 <h2>You are logged in</h2>
               </Col>
             </Row>
-            <Row className='section'>
+            <Row className="section">
               <Col>
                 <h3>Welcome { user.email }!</h3>
               </Col>
@@ -35,7 +35,7 @@ function WelcomePage() {
       ); 
     }
       
-    return <Navigate to='/signin'/>
+    return <Navigate to="/signin"/>
 }
 
 export default WelcomePage;
