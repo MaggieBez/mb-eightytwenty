@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase';
 import { updatePassword, updateProfile } from 'firebase/auth';
-import { Card, Col, Container, Row, Button, Form, InputGroup } from 'react-bootstrap';
+import { Card, Col, Container, Row, Button, Form } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { ToastContainer, toast } from 'react-toastify';
