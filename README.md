@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## About the project
 
-Packages used:
+### Packages used
 - Sass
 - React Bootstrap
 - React Router
