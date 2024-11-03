@@ -11,8 +11,11 @@ import { signinFirebaseUser } from '../firebase';
 import { Card } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { auth } from '../firebase';
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function SigninPage(props) {
+  const [user, loading] = useAuthState(auth);
   const [currentEmail, setEmail] = useState("");
   const [currentPassword, setPassword] = useState("");
 
@@ -75,6 +78,14 @@ function SigninPage(props) {
     } else {
       toast.error("Login Failed. Check Credentials.");
     }
+  }
+
+  if (loading) {
+    return;
+  }
+
+  if (user) {
+    navigate("/welcome");
   }
 
   return (
