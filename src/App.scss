@@ -36,6 +36,9 @@
   }
 
   .SignUpPage {
+    .section {
+      margin: 2rem 0;
+    }
     Button {
       width: $general-button-width;
       background-color: $primary-color;
@@ -44,6 +47,9 @@
   }
 
   .SigninPage {
+    .section {
+      margin: 2rem 0;
+    }
     Button {
       width: $general-button-width;
       background-color: $primary-color;

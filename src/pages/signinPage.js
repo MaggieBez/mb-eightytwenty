@@ -73,7 +73,7 @@ function SigninPage(props) {
   return (
     <div className="SigninPage">   
       <Container>
-          <Row>
+          <Row className='section'>
               <Col lg={{ span:4, offset:4 }}>
                   <h3>Sign In</h3>
                   <Card>
@@ -115,7 +115,7 @@ function SigninPage(props) {
                   </Card>  
               </Col>
           </Row>
-          <Row>
+          <Row className='section'>
               <Col lg={{ span:4, offset:4 }}>
                   <Link to='/'>
                           Don't have and account yet? Register.
